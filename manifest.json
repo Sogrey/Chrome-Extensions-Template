@@ -1,14 +1,14 @@
 {
-    "name": "Hello World Extension", 
+    "name": "ChromeExtensionTemplate", 
     "version": "0.0.1", 
     "manifest_version": 2, 
-    "description":"Chrome Extension Demo",    
+    "description":"Chrome Extension Demo by Sogrey",    
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "scripts": ["js/background.js"],
+        "persistent": true
     },
     "chrome_url_overrides": {
-        "newtab": "tab.html"
+        "newtab": "index.html"
     },
     "browser_action":{
         "default_icon":"imgs/icons/Sogrey.png",
