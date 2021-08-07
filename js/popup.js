@@ -1,12 +1,12 @@
 // selector 为对话框的 CSS 选择器或 DOM 元素或 HTML 字符串
 // options 为配置参数，见下面的参数列表
-var inst = new mdui.Dialog('#addBookmarkDialog', {
+var addBookmarkDialog = new mdui.Dialog('#addBookmarkDialog', {
     modal: true
 });
 
 // method
 document.getElementById('addBookmark').addEventListener('click', function () {
-    inst.open();
+    addBookmarkDialog.open();
 });
 
 // event
@@ -34,4 +34,32 @@ dialog.addEventListener('cancel.mdui.dialog', function () {
 
 dialog.addEventListener('confirm.mdui.dialog', function () {
     console.log('confirm');
+});
+
+// anchorSelector 表示触发菜单的元素的 CSS 选择器或 DOM 元素
+// menuSelector 表示菜单的 CSS 选择器或 DOM 元素
+// options 表示组件的配置参数，见下面的参数列表
+var addBookmarkMenu = new mdui.Menu('#addBookmarkMenuBtn', '#addBookmarkMenu', {});
+
+document.getElementById('addBookmarkMenuBtn').addEventListener('click', function () {
+    addBookmarkMenu.open();
+});
+
+// event
+var dialog = document.getElementById('addBookmarkMenu');
+
+dialog.addEventListener('open.mdui.menu', function () {
+  console.log('open');
+});
+
+dialog.addEventListener('opened.mdui.menu', function () {
+  console.log('opened');
+});
+
+dialog.addEventListener('close.mdui.menu', function () {
+  console.log('close');
+});
+
+dialog.addEventListener('closed.mdui.menu', function () {
+  console.log('closed');
 });
