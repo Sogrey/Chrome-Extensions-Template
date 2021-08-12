@@ -36,6 +36,44 @@ dialog.addEventListener('confirm.mdui.dialog', function () {
     console.log('confirm');
 });
 
+
+// -------------------------
+var showQRDialog = new mdui.Dialog('#showQR', {
+    modal: true
+});
+
+// method
+document.getElementById('showQRMenu').addEventListener('click', function () {
+    showQRDialog.open();
+});
+
+// // event
+// var dialog = document.getElementById('showQR');
+
+// dialog.addEventListener('open.mdui.dialog', function () {
+//     console.log('open');
+// });
+
+// dialog.addEventListener('opened.mdui.dialog', function () {
+//     console.log('opened');
+// });
+
+// dialog.addEventListener('close.mdui.dialog', function () {
+//     console.log('close');
+// });
+
+// dialog.addEventListener('closed.mdui.dialog', function () {
+//     console.log('closed');
+// });
+
+// dialog.addEventListener('cancel.mdui.dialog', function () {
+//     console.log('cancel');
+// });
+
+// dialog.addEventListener('confirm.mdui.dialog', function () {
+//     console.log('confirm');
+// });
+
 // anchorSelector 表示触发菜单的元素的 CSS 选择器或 DOM 元素
 // menuSelector 表示菜单的 CSS 选择器或 DOM 元素
 // options 表示组件的配置参数，见下面的参数列表

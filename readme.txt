@@ -31,3 +31,5 @@ https://mp.weixin.qq.com/s/jVUrqO-RGkxdY-EANKJF8Q
 https://github.com/camwiegert/typical 动画打字
 
 http://chrome.cenchy.com/index.html
+
+二维码 https://github.com/neocotic/qrious

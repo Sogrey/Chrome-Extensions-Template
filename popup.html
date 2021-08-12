@@ -32,7 +32,7 @@
                         <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe412;</i>网页截图
                     </a>
                 </li>
-                <li class="mdui-menu-item">
+                <li class="mdui-menu-item" id="showQRMenu">
                     <a class="mdui-ripple">
                         <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe326;</i>手机访问
                     </a>
@@ -75,6 +75,15 @@
                     <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>OK</button>
                 </div>
             </div>
+
+            <div class="mdui-dialog" id="showQR">
+                <div class="mdui-dialog-content">
+                    <img class="mdui-img-fluid" src="image.png"/>
+                </div>
+                <div class="mdui-dialog-actions">
+                  <button class="mdui-btn mdui-ripple" mdui-dialog-close>Close</button>
+                </div>
+              </div>
         </div>
 
         <div class="mdui-bottom-nav mdui-bottom-nav-text-auto mdui-color-blue-600">
