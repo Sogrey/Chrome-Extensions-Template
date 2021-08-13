@@ -38,6 +38,12 @@ dialog.addEventListener('confirm.mdui.dialog', function () {
 
 
 // -------------------------
+
+var qr = new QRious({
+    element: document.getElementById('qr'),
+    value: 'https://github.com/neocotic/qrious'
+});
+
 var showQRDialog = new mdui.Dialog('#showQR', {
     modal: true
 });
@@ -87,17 +93,17 @@ document.getElementById('addBookmarkMenuBtn').addEventListener('click', function
 var dialog = document.getElementById('addBookmarkMenu');
 
 dialog.addEventListener('open.mdui.menu', function () {
-  console.log('open');
+    console.log('open');
 });
 
 dialog.addEventListener('opened.mdui.menu', function () {
-  console.log('opened');
+    console.log('opened');
 });
 
 dialog.addEventListener('close.mdui.menu', function () {
-  console.log('close');
+    console.log('close');
 });
 
 dialog.addEventListener('closed.mdui.menu', function () {
-  console.log('closed');
+    console.log('closed');
 });

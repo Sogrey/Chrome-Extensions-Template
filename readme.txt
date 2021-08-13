@@ -33,3 +33,5 @@ https://github.com/camwiegert/typical 动画打字
 http://chrome.cenchy.com/index.html
 
 二维码 https://github.com/neocotic/qrious
+
+参考： https://github.com/gopinav/Chrome-Extensions
