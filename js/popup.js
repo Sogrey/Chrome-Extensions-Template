@@ -39,10 +39,11 @@ dialog.addEventListener('confirm.mdui.dialog', function () {
 
 // -------------------------
 
-var qr = new QRious({
-    element: document.getElementById('qr'),
-    value: 'https://github.com/neocotic/qrious'
-});
+// var qr = new QRious({
+//     element: document.getElementById('qr'),
+//     size:300,
+//     value: 'https://github.com/neocotic/qrious'
+// });
 
 var showQRDialog = new mdui.Dialog('#showQR', {
     modal: true
@@ -50,8 +51,32 @@ var showQRDialog = new mdui.Dialog('#showQR', {
 
 // method
 document.getElementById('showQRMenu').addEventListener('click', function () {
-    showQRDialog.open();
+    // showQRDialog.open();
+    // alert(window.location.href);
+
+    chrome.tabs.getSelected(null, function (tab) { // 先获取当前页面的tabID     
+        alert(tab.title + '\n' + tab.url);
+
+        var qr = new QRious({
+            element: document.getElementById('qr'),
+            size: 500,
+            padding: 0,
+            value: tab.url
+        });
+
+        showQRDialog.open();
+    });
+
+    // chrome.tabs.getSelected(null, function (tab) {　　// 先获取当前页面的tabID
+    //     // 与 js/content_script.js 通信
+    //     chrome.tabs.sendMessage(tab.id, {greeting: "getTabHtml"}, function(response) {
+    //         alert(response);　　// 向content-script.js发送请求信息
+    //     });
+    // });
 });
+
+
+
 
 // // event
 // var dialog = document.getElementById('showQR');

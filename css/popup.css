@@ -34,3 +34,7 @@ body {
 .mdui-container .mdui-fab {
     bottom: 72px;
 }
+
+.fulwidth{
+    width: 100%;
+}
