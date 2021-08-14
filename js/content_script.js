@@ -1,8 +1,22 @@
-var html = document.body.innerHTML;
-chrome.extension.onMessage.addListener(
-    function (request, sender, sendMessage) {
-        if (request.greeting == "getTabHtml")
-            sendMessage(html);
-        else
-            sendMessage("FUCK OFF"); // snub them.
-    });
+$(document).ready(function () {
+    var html = document.documentElement.innerHTML;
+    var head = document.head.innerHTML;
+    var body = document.body.innerHTML;
+    chrome.runtime.onMessage.addListener(
+        function (request, sender, sendResponse) {
+            switch (request.cmd) {
+                case "getTabHtml":
+                    sendResponse(html);
+                    break;
+                case "getTabHead":
+                    sendResponse(head);
+                    break;
+                case "getTabBody":
+                    sendResponse(body);
+                    break;
+                default:
+                    sendResponse("FUCK OFF"); // snub them.
+                    break;
+            }
+        });
+})

@@ -23,7 +23,8 @@
             <a class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
             <!-- <a id="deleteBookmark"  class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe838;</i></a> -->
             <a id="addBookmark" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe83a;</i></a>
-            <a id="addBookmarkMenuBtn" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5c3;</i></a>
+            <a id="addBookmarkMenuBtn" class="mdui-btn mdui-btn-icon"><i
+                    class="mdui-icon material-icons">&#xe5c3;</i></a>
 
             <!-- Menu -->
             <ul id="addBookmarkMenu" class="mdui-menu">
@@ -39,35 +40,157 @@
                 </li>
                 <li class="mdui-menu-item">
                     <a class="mdui-ripple">
-                        <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe86f;</i>源码
+                        <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe86f;</i>网页源码
+                    </a>
+                </li>
+                <li class="mdui-divider"></li>
+                <li class="mdui-menu-item" id="settingsMenu">
+                    <a class="mdui-ripple" target="_blank">
+                        <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe8b8;</i>选项
                     </a>
                 </li>
             </ul>
 
             <div class="mdui-dialog" id="addBookmarkDialog">
                 <div class="mdui-dialog-title">Add Bookmark</div>
-                <div class="mdui-dialog-content">
+                <div class="mdui-dialog-content fulwidth">
                     <!-- 网址标题 -->
                     <div class="mdui-textfield">
-                        <i class="mdui-icon material-icons">&#xe264;</i>
+                        <!-- <i class="mdui-icon material-icons">&#xe264;</i> -->
+                        <i class="mdui-icon material-icons tabIconImage"><img id="img-addBookmarkDialog-icon"
+                                class="mdui-img-rounded " src="imgs/icon_globe.svg" /></i>
                         <label class="mdui-textfield-label">Title</label>
-                        <input class="mdui-textfield-input" type="text" />
+                        <input id="input-addBookmarkDialog-title" class="mdui-textfield-input" type="text" />
                     </div>
                     <!-- 网址链接 -->
                     <div class="mdui-textfield">
-                        <input class="mdui-textfield-input" type="text" placeholder="Link" />
+                        <label class="mdui-textfield-label">Link</label>
+                        <input id="input-addBookmarkDialog-link" class="mdui-textfield-input" type="text"
+                            placeholder="Link" />
                     </div>
-                    <!-- 分类 -->
-                    <div class="mdui-textfield">
-                        <input class="mdui-textfield-input" type="text" placeholder="Classify" />
+                    <!-- 分类&书签 -->
+                    <div class="mdui-row fulwidth">
+                        <div class="mdui-col-xs-6">
+                            <label class="mdui-textfield-label">Group</label>
+                            <select class="mdui-select mdui-col-xs-12" mdui-select>
+                                <option value="1">书签</option>
+                                <option value="2">收藏</option>
+                                <option value="3">稍后阅读</option>
+                                <option value="4">阅后即焚</option>
+                            </select>
+                        </div>
+                        <div class="mdui-col-xs-6">
+                            <label class="mdui-textfield-label">Collection</label>
+                            <select class="mdui-select mdui-col-xs-12" mdui-select>
+                                <option value="1">未分类</option>
+                                <option value="2">Vue</option>
+                                <option value="3">React</option>
+                                <option value="4">Anglure</option>
+                                <option value="5">WebGL</option>
+                            </select>
+                        </div>
                     </div>
-                    <!-- 分类 -->
-                    <div class="mdui-textfield">
-                        <input class="mdui-textfield-input" type="text" placeholder="User Name" />
-                    </div>
-                    <!-- 分类 -->
-                    <div class="mdui-textfield">
-                        <input class="mdui-textfield-input" type="text" placeholder="User Name" />
+                    <!-- 标签 -->
+                    <div><label class="mdui-textfield-label">Label</label>
+                        <div class="fulwidth autoHeight overflowY">
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title" contenteditable="true" style="outline: none;">new</span>
+                                <!-- <input type="text" class="mdui-chip mdui-chip-title" style="outline: none;border: none;height: 80%;width: auto;" placeholder="new" /> -->
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">add</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                            <div class="mdui-chip floatLeft">
+                                <span class="mdui-chip-title">Example Chip</span>
+                                <span class="mdui-chip-delete"><i class="mdui-icon material-icons">cancel</i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mdui-dialog-actions">
@@ -79,11 +202,12 @@
             <div class="mdui-dialog" id="showQR">
                 <div class="mdui-dialog-content">
                     <canvas id="qr" class="mdui-img-fluid fulwidth"></canvas>
+                    <div id="qr_url"></div>
                 </div>
                 <div class="mdui-dialog-actions">
-                  <button class="mdui-btn mdui-ripple" mdui-dialog-close>Close</button>
+                    <button class="mdui-btn mdui-ripple" mdui-dialog-close>Close</button>
                 </div>
-              </div>
+            </div>
         </div>
 
         <div class="mdui-bottom-nav mdui-bottom-nav-text-auto mdui-color-blue-600">

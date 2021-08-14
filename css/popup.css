@@ -35,6 +35,32 @@ body {
     bottom: 72px;
 }
 
-.fulwidth{
+.fulwidth {
     width: 100%;
+}
+
+.autoHeight {
+    height: auto;
+}
+
+.tabIconImage {
+    padding: 0 !important;
+}
+
+.tabIconImage>img {
+    width: 50px;
+    height: auto;
+}
+
+.mdui-select.fulwidth+.mdui-select-position-auto {
+    width: 100%;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.overflowY {
+    overflow-x: inherit;
+    overflow-y: auto;
 }
