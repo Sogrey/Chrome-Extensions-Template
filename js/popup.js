@@ -29,12 +29,6 @@ bgjs.getSelectedTabTitle((tab) => {
 });
 
 
-
-
-
-
-
-
 // bgjs.sendMessageToContentScript({
 //     cmd: 'getTabHtml',
 //     data: {},

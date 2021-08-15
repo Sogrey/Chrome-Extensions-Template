@@ -4,6 +4,7 @@ $(document).ready(function () {
     var body = document.body.innerHTML;
     chrome.runtime.onMessage.addListener(
         function (request, sender, sendResponse) {
+            console.log('request => ',request);
             switch (request.cmd) {
                 case "getTabHtml":
                     sendResponse(html);
@@ -19,4 +20,4 @@ $(document).ready(function () {
                     break;
             }
         });
-})
+});
