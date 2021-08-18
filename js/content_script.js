@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    var html = document.documentElement.innerHTML;
-    var head = document.head.innerHTML;
-    var body = document.body.innerHTML;
+    var html = document.documentElement && document.documentElement.innerHTML;
+    var head = document.head && document.head.innerHTML;
+    var body = document.body && document.body.innerHTML;
     chrome.runtime.onMessage.addListener(
         function (request, sender, sendResponse) {
             console.log('request => ',request);
